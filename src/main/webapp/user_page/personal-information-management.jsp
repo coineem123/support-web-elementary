@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,13 +104,12 @@ input[type=submit]:hover {
 
 </head>
 <body>
-
 <%@include file="header.jsp"%>
 
 	<h2>Chỉnh sửa thông tin cá nhân</h2>
 
 	<div class="container">
-		<form action="/action_page.php">
+		<form:form action="/elementary_web/detail" method="post" modelAttribute="editAccount">
 
 			<div class="row">
 				<div class="col-25">
@@ -139,8 +139,9 @@ input[type=submit]:hover {
 					<label for="fname">Tên tài khoản</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="fname" name="firstname"
-						placeholder="Your name..">
+					<form:input path="nickName" id="fname" name="firstname"
+						placeholder="Your name.."/>
+								
 				</div>
 			</div>
 			<div class="row">
@@ -148,8 +149,8 @@ input[type=submit]:hover {
 					<label for="lname">Tên người dùng</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="lname" name="lastname"
-						placeholder="Your last name..">
+					<form:input path="accountName" id="lname" name="lastname"
+						placeholder="Your last name.."/>
 				</div>
 			</div>
 			<div class="row">
@@ -157,8 +158,9 @@ input[type=submit]:hover {
 					<label for="country">Số điện thoại</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="lname" name="lastname"
-						placeholder="Your last name..">
+				
+					<form:input path="phoneNumber" type="text" id="lname"
+						placeholder="Your last name.."/>
 				</div>
 			</div>
 			<div class="row">
@@ -166,19 +168,21 @@ input[type=submit]:hover {
 					<label for="lname">Email</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="lname" name="lastname"
-						placeholder="Your last name..">
+					<form:input path="email" id="lname" name="lastname"
+						placeholder="Your last name.."/>
 				</div>
 			</div>
+			
+			<form:button>Save</form:button> 
 
-			<button type="submit" class="btn btn-primary">Lưu</button>
+			<!-- <button type="submit" class="btn btn-primary">Lưu</button>
 			&emsp;
-			<button type="submit" class="btn btn-primary">Thoát</button>
+			<button type="submit" class="btn btn-primary">Thoát</button> -->
 
-		</form>
+		</form:form>
+		
+		<a href="changePassword">Đổi mật khẩu</a>
 	</div>
 	
-	 <%@include file="footer.jsp"%>
-
 </body>
 </html>

@@ -94,7 +94,7 @@
 					%>
 					<!-- Trường họp người dùng đã đăng nhập -->
 					<a class="nav-item nav-link" data-toggle="modal"
-						data-target="#store">Cửa hàng</a> <a class="nav-item nav-link">Quản
+						data-target="#store">Cửa hàng</a> <a href="/elementary_web/editInformation"  class="nav-item nav-link">Quản
 						lý thông tin cá nhân</a>
 
 					<%

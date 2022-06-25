@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<!DOCTYPE html>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
 
-<title>Insert title here</title>
+<title>Đổi mật khẩu</title>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -75,30 +75,30 @@ a {
 
 <%@include file="header.jsp"%>
 
-<form action="/action_page.php">
   <div class="container">
+  <form:form action="/elementary_web/detailChangePassword" method="post"  modelAttribute="changePassword" >
     <h1>Đổi mật khẩu</h1>
     <hr>
 
     <label for="email"><b>Mật khẩu hiện tại</b></label>
-    <input type="password" placeholder="Nhập mật khẩu hiện tại của bạn" name="psw-repeat" id="psw-repeat" required>
+   <form:input path="old_password" placeholder="Nhập mật khẩu hiện tại của bạn" name="psw-repeat" id="psw-repeat" type="password" />
     <hr>
 
     <label for="psw"><b>Mật khẩu mới</b></label>
-    <input type="password" placeholder="Nhập mật khẩu mới" name="psw" id="psw" required>
+    <form:input path="new_password" placeholder="Nhập mật khẩu mới" name="psw" id="psw" type="password" />
 
     <label for="psw-repeat"><b>Nhập lại mật khẩu mới</b></label>
-    <input type="password" placeholder="Nhập lại mật khẩu mới" name="psw-repeat" id="psw-repeat" required>
+   <form:input path="again_new_password" placeholder="Nhập lại mật khẩu mới" name="psw-repeat" id="psw-repeat" type="password" />
     <hr>
 
-    <button type="submit" class="registerbtn">Lưu</button>
+    <form:button>Lưu</form:button> 
+
+	 </form:form>
   </div>
   
   <div class="container signin">
-    <p>Bạn muốn thoát? <a href="#">Thoát</a>.</p>
+    <p>Bạn muốn thoát? <a href="elementary_web">Thoát</a>.</p>  
   </div>
-</form>
-
 <%@include file="footer.jsp"%>
 
 </body>

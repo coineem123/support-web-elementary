@@ -22,6 +22,12 @@ public class AccountDTO implements UserDetails {
 	private int monthlyPoint;
 	private String roleName;
 	private boolean active;
+	
+	
+	private void Acount() {
+		// TODO Auto-generated method stub
+
+	}
 
 	public AccountDTO(int accountID, String accountName, String nickName, String password, String email,
 			String phoneNumber, int coin, int totalPoint, int weeklyPoint, int monthlyPoint, String roleName,
