@@ -21,7 +21,7 @@ public class RankingService {
 	
 	public List<AccountDTO> getMonthlyRankingList(){
 		List<AccountDTO> accountDTOList =  new ArrayList<AccountDTO>();
-		List<Account> accountList =accountRepository.findByOrderByMonthlyPointDesc();
+		List<Account> accountList =accountRepository.findTop10ByOrderByMonthlyPointDesc();
 		if(accountList == null) {
 			return null;
 		}else {
