@@ -15,7 +15,7 @@
 <body>
 	<%@include file="header.jsp"%>
 
-<!-- Leaderboard Start -->
+	<!-- Leaderboard Start -->
 	<section class="main-content">
 		<div class="container">
 			<h1>Top 3</h1>
@@ -30,8 +30,7 @@
 						</div>
 						<div class="leaderboard-card__body">
 							<div class="text-center">
-								<img src="#" class="circle-img mb-2"
-									alt="User Img">
+								<img src="#" class="circle-img mb-2" alt="User Img">
 								<h5 class="mb-0">${rankingList.get(1).nickName}</h5>
 								<hr>
 								<div class="d-flex justify-content-between align-items-center">
@@ -50,8 +49,7 @@
 						</div>
 						<div class="leaderboard-card__body">
 							<div class="text-center">
-								<img src="#" class="circle-img mb-2"
-									alt="User Img">
+								<img src="#" class="circle-img mb-2" alt="User Img">
 								<h5 class="mb-0">${rankingList.get(0).nickName}</h5>
 								<hr>
 								<div class="d-flex justify-content-between align-items-center">
@@ -70,8 +68,7 @@
 						</div>
 						<div class="leaderboard-card__body">
 							<div class="text-center">
-								<img src="#" class="circle-img mb-2"
-									alt="User Img">
+								<img src="#" class="circle-img mb-2" alt="User Img">
 								<h5 class="mb-0">${rankingList.get(2).nickName}</h5>
 								<hr>
 								<div class="d-flex justify-content-between align-items-center">
@@ -97,39 +94,43 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${rankingList}" var="rankingList">
-						<tr>
-							<td>
-								<div class="d-flex align-items-baseline">
-									<h4 class="mr-1">1</h4>
-								</div>
-							</td>
-							<td>
-								<div class="d-flex align-items-center">
-									<img src="#" class="circle-img circle-img--small mr-2"
-										alt="User Img">
-									<div class="user-info__basic">
-										<h5 class="mb-0">${rankingList.nickName}</h5>
+					<c:forEach items="${rankingList}" var="rankingList" 
+					begin="1" end="10" step="1" varStatus="loop">
+						
+							<tr>
+								<td>
+									<div class="d-flex align-items-baseline">
+										<h4 class="mr-1">
+											<c:out value="${loop.count}" />
+										</h4>
 									</div>
-								</div>
-							</td>
-							<td>
-								<div class="d-flex align-items-baseline">
-									<h4 class="mr-1">${rankingList.monthlyPoint}</h4>
-								</div>
-							</td>
-							<td>
-								<button class="btn btn-success btn-sm">Chúc mừng</button>
-							</td>
-						</tr>
-					</c:forEach>
+								</td>
+								<td>
+									<div class="d-flex align-items-center">
+										<img src="#" class="circle-img circle-img--small mr-2"
+											alt="User Img">
+										<div class="user-info__basic">
+											<h5 class="mb-0">${rankingList.nickName}</h5>
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="d-flex align-items-baseline">
+										<h4 class="mr-1">${rankingList.monthlyPoint}</h4>
+									</div>
+								</td>
+								<td>
+									<button class="btn btn-success btn-sm">Chúc mừng</button>
+								</td>
+							</tr>
+						</c:forEach>
 				</tbody>
 			</table>
 		</div>
 	</section>
-<!-- Leaderboard End -->
+	<!-- Leaderboard End -->
 
-<%@include file="footer.jsp"%>
+	<%@include file="footer.jsp"%>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
