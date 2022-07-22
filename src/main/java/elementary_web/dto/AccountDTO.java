@@ -23,10 +23,9 @@ public class AccountDTO implements UserDetails {
 	private String roleName;
 	private boolean active;
 	
-	
-	private void Acount() {
-		// TODO Auto-generated method stub
 
+	public AccountDTO() {
+		super();
 	}
 
 	public AccountDTO(int accountID, String accountName, String nickName, String password, String email,

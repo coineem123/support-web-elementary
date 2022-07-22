@@ -107,11 +107,8 @@
 												</div>
 												<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 													<div class="actions graph-rp">
-														<a href="#">
-															<button type="button" class="btn btn-primary"
-																title="Xem bài tập">
-																<i class="fa-solid fa-circle-info"></i>
-															</button>
+														<a href="./lessonManagement?chapterID=<%=chapter.getChapterID()%>" class="fa-solid fa-circle-info" title="Xem bài tập">
+															
 														</a>
 
 														<button type="button" class="btn btn-primary"

@@ -126,6 +126,6 @@ img {
 		<!-- Static Table End -->
 		<%@ include file="footer.jsp"%>
 	</div>
-	<script src="../admin_page/js/ajaxEdit.js" type="text/javascript"></script>
+	<script src="../admin_page/js/editLesson.js" type="text/javascript"></script>
 </body>
 </html>
