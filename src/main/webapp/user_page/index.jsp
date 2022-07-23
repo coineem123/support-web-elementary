@@ -13,9 +13,9 @@
 
 <body>
 	<%@include file="header.jsp"%>
-	<%@include file="banner.jsp" %>
+	<%@include file="banner.jsp"%>
 	<!-- Banner Start -->
-	
+
 	<!-- Banner End -->
 
 	<!--
@@ -303,8 +303,11 @@
 						</div>
 						<div class="card-footer bg-transparent py-4 px-5">
 							<%
-							ArrayList<ChapterDTO> chaperDTOList = (ArrayList<ChapterDTO>) subject.getChapterList();
-							for (ChapterDTO chapter : chaperDTOList) {
+							ArrayList<ChapterDTO> chapterDTOList = (ArrayList<ChapterDTO>) subject.getChapterList();
+							for (int i = 0; i < chapterDTOList.size(); i++) {
+								if (i > 2)
+									break;
+								ChapterDTO chapter = chapterDTOList.get(i);
 							%>
 							<div class="row border-bottom">
 								<div class="col-12 py-1">

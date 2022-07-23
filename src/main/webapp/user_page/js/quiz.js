@@ -103,8 +103,7 @@ function answerQuestion(div) {
 
 			var explainID = '#ex_' + questionNumber;
 			var explainDiv = $(explainID);
-			var explainP = $(explainID + ' p');
-			explainP.text(explain);
+			explainDiv.html(explain);
 			explainDiv.attr('hidden', false);
 
 
