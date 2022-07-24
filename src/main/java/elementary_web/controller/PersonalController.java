@@ -19,6 +19,7 @@ import elementary_web.Utility;
 import elementary_web.dto.AccountDTO;
 import elementary_web.dto.ChangePasswordDTO;
 import elementary_web.service.AccountService;
+import net.bytebuddy.utility.privilege.GetSystemPropertyAction;
 
 // Controller dùng cho quản lý thông tin tài khoản
 @Controller
@@ -34,8 +35,13 @@ public class PersonalController {
 //	}
 
 	@RequestMapping(value = "editInformation", method = RequestMethod.GET)
-	public String editForm(Model model) {
+	public String editForm(Model model, HttpSession session) {
+		AccountDTO accountDTO = (AccountDTO) session.getAttribute("account");
+		session.setAttribute("accountDTO", accountDTO);
 		model.addAttribute("editAccount", new AccountDTO());
+		
+//		AccountDTO account = (AccountDTO) session.getAttribute("account");
+		
 		return "./user_page/personal-information-management";
 
 	}
@@ -54,12 +60,12 @@ public class PersonalController {
 		System.out.println(account.getEmail());
 		System.out.println(account.getPhoneNumber());
 		System.out.println(account.getPassword());
-		return "./user_page/detail";
+		return "./user_page/editInformation";
 	}
 	@RequestMapping(value = "changePassword", method = RequestMethod.GET)
 	public String changPassword(Model model) {
 		model.addAttribute("changePassword", new ChangePasswordDTO());
-		return "./user_page/changePassword";
+		return "./user_page/change-password";
 	}
 	
 	@RequestMapping(value = "detailChangePassword", method = RequestMethod.POST)

@@ -139,8 +139,8 @@ input[type=submit]:hover {
 					<label for="fname">Tên tài khoản</label>
 				</div>
 				<div class="col-75">
-					<form:input path="nickName" id="fname" name="firstname"
-						placeholder="Your name.."/>
+					<form:input path="accountName" id="fname" name="firstname"
+						placeholder="Your name.." value ="${accountDTO.accountName}"/>
 								
 				</div>
 			</div>
@@ -149,8 +149,9 @@ input[type=submit]:hover {
 					<label for="lname">Tên người dùng</label>
 				</div>
 				<div class="col-75">
-					<form:input path="accountName" id="lname" name="lastname"
-						placeholder="Your last name.."/>
+				
+					<form:input path="nickName" id="lname" name="lastname"
+						placeholder="Your last name.." value="${accountDTO.nickName}" />
 				</div>
 			</div>
 			<div class="row">
@@ -160,7 +161,7 @@ input[type=submit]:hover {
 				<div class="col-75">
 				
 					<form:input path="phoneNumber" type="text" id="lname"
-						placeholder="Your last name.."/>
+						placeholder="Your last name.." value="${accountDTO.phoneNumber}"/>
 				</div>
 			</div>
 			<div class="row">
@@ -169,7 +170,7 @@ input[type=submit]:hover {
 				</div>
 				<div class="col-75">
 					<form:input path="email" id="lname" name="lastname"
-						placeholder="Your last name.."/>
+						placeholder="Your last name.." value="${accountDTO.email}"/>
 				</div>
 			</div>
 			
